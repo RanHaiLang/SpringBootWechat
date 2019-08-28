@@ -1,0 +1,41 @@
+package com.rminfo.jinmaocs.entity;
+
+import com.rminfo.jinmaocs.util.ConfigUtil;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: SeaRan
+ * Date: 2019/7/29
+ * Time: 15:04
+ * 项目名：jinmaocs
+ * 描述：TODO
+ * Description: No Description
+ */
+
+@Component
+@PropertySource("classpath:WechatConstants.properties")
+public class Constant {
+    @Value("${APPID}")
+    public String appid;
+    @Value("${SECRET}")
+    public String secret;
+
+    public String getAppid() {
+        return appid;
+    }
+
+    public void setAppid(String appid) {
+        this.appid = appid;
+    }
+
+    public String getSecret() {
+        return secret;
+    }
+
+    public void setSecret(String secret) {
+        this.secret = secret;
+    }
+}

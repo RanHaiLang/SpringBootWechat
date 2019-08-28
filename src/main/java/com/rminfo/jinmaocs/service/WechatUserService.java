@@ -1,0 +1,23 @@
+package com.rminfo.jinmaocs.service;
+
+import com.rminfo.jinmaocs.entity.R5rmAppUser;
+
+import java.util.Map;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: SeaRan
+ * Date: 2019/7/31
+ * Time: 17:21
+ * 项目名：jinmaocs
+ * 描述：TODO
+ * Description: No Description
+ */
+public interface WechatUserService {
+
+    //判断用户是否存在
+    R5rmAppUser selectAppUser(String username,String password);
+    R5rmAppUser selectBindUser(String username);
+    R5rmAppUser selectYesNoBindUser(String openid);
+    int userBinding(String username, String openid);
+}

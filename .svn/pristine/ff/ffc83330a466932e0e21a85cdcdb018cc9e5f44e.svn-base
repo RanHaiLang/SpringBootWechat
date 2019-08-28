@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rminfo.jinmaocs.mapper.UeditorMapper">
+    <select id="selectPages" parameterType="Map" resultType="Map">
+SELECT NOT_ID,NOT_CODE,NOT_DESC,NOT_DATE,NOTUDFCHAR03,ENCCODE,ENCDESC,ENCENTITY
+    FROM ( SELECT T .*,R5RMENTITYCATEGORY.*, ROWNUM rn FROM (
+				SELECT R5RMNOTICECS.* FROM R5RMNOTICECS ORDER BY
+				 NOT_DATE DESC)T LEFT JOIN R5RMENTITYCATEGORY ON NOTUDFCHAR03= ENCENTITY AND ENCCODE='NOTICE' WHERE ROWNUM<![CDATA[<]]>=#{stop}) where rn>#{start}
+    </select>
+    <select id="selectPagesCount" resultType="int">
+        select COUNT(1) from
+        (SELECT T .*, ROWNUM rn FROM (
+				SELECT R5RMNOTICECS.* FROM R5RMNOTICECS ORDER BY
+				 NOT_DATE DESC)T )
+    </select>
+    <select id="selectCodeCount" parameterType="String" resultType="int">
+        select COUNT(1) from R5RMNOTICECS WHERE NOT_CODE = #{str}
+    </select>
+    <update id="updateUeditor" parameterType="Map">
+        UPDATE R5RMNOTICECS SET NOT_NOTICE=#{ueditorValue} WHERE NOT_CODE=#{code}
+    </update>
+    <select id="selectUeditor" parameterType="String" resultType="String">
+        SELECT NOT_NOTICE FROM R5RMNOTICECS WHERE NOT_CODE = #{str}
+    </select>
+    <insert id="addUeditor" parameterType="Map">
+        INSERT INTO R5RMNOTICECS(
+         NOT_ID
+        ,NOT_CODE
+        ,NOT_DESC
+        ,NOT_DATE
+        ,NOTUDFCHAR03
+        )VALUES (
+        sys_guid(),#{ueditorCode},#{ueditorDesc},sysdate,#{classNoctice}
+        )
+    </insert>
+    <delete id="deleteUeditor" parameterType="String">
+        delete from R5RMNOTICECS where not_code=#{str}
+    </delete>
+    <select id="selectnotcode" resultType="String">
+        SELECT NOT_CODE FROM
+        (SELECT T.*,ROWNUM RN FROM
+        (SELECT R5RMNOTICECS.* FROM R5RMNOTICECS ORDER BY NOT_DATE DESC）T WHERE ROWNUM<![CDATA[<]]>2) WHERE RN>0
+    </select>
+    <select id="selectPageJson" resultType="Map" parameterType="String">
+       SELECT NOT_CODE,NOT_DESC,
+        TO_CHAR(NOT_DATE, 'YYYY-MM-DD HH24:MI:SS') as NOT_DATE
+      ,NOTUDFCHAR02,NOTUDFCHAR03 FROM R5RMNOTICECS  WHERE 1=1
+        <if test="value != null and value !=''">
+           AND NOTUDFCHAR03=#{value}
+        </if>
+         ORDER BY NOT_DATE DESC
+    </select>
+    <insert id="addDoc" parameterType="Map">
+        INSERT INTO R5RMNOTICEDOC(
+        ND_ID
+        ,NOT_ND_CODE
+        ,ND_DESC
+        ,ND_DATE
+        ,ND_OLDNAME
+        ,ND_NEWNAME
+        )VALUES (
+        sys_guid(),#{noticeCode},#{DocumentDesc},sysdate,#{fileName},#{newName}
+        )
+    </insert>
+    <select id="selectDoc" resultType="Map" parameterType="String">
+        SELECT ND_ID,NOT_ND_CODE,ND_DESC,ND_OLDNAME,ND_NEWNAME FROM R5RMNOTICEDOC WHERE NOT_ND_CODE=#{str} ORDER BY ND_DATE DESC
+    </select>
+    <delete id="deleteDoc" parameterType="String">
+        DELETE FROM R5RMNOTICEDOC WHERE ND_ID=#{str}
+    </delete>
+    <select id="selectDocNewname" resultType="String" parameterType="String">
+        SELECT ND_NEWNAME FROM R5RMNOTICEDOC WHERE ND_ID=#{str}
+    </select>
+    <update id="updateUeditorimage" parameterType="Map">
+        UPDATE R5RMNOTICECS SET NOTUDFCHAR01=#{oldName},NOTUDFCHAR02=#{newName} WHERE NOT_CODE=#{code}
+    </update>
+    <select id="selectimage" resultType="Map" parameterType="String">
+        SELECT NOTUDFCHAR01,NOTUDFCHAR02 FROM R5RMNOTICECS WHERE NOT_CODE=#{code}
+    </select>
+    <select id="selectimagePath" resultType="String" parameterType="String">
+        SELECT NOTUDFCHAR02 FROM R5RMNOTICECS WHERE NOT_CODE=#{code}
+    </select>
+    <update id="saveNoticeUpdate" parameterType="Map">
+        UPDATE R5RMNOTICEDOC SET ND_DESC=#{desc} WHERE NOT_ND_CODE=#{code}
+    </update>
+    <select id="selectNoticeUpdate" resultType="String" parameterType="String">
+        SELECT ND_DESC FROM R5RMNOTICEDOC WHERE NOT_ND_CODE=#{str}
+    </select>
+    <select id="selectPagesFive" parameterType="Map" resultType="Map">
+        SELECT *
+        FROM ( SELECT T .*, ROWNUM rn FROM (
+        SELECT R5RMNOTICECS.NOT_CODE,R5RMNOTICECS.NOT_DESC,R5RMNOTICECS.NOT_DATE,R5RMNOTICECS.NOTUDFCHAR02 FROM R5RMNOTICECS ORDER BY
+        NOT_DATE DESC)T WHERE ROWNUM<![CDATA[<]]>=#{stop}) where rn>#{start}
+    </select>
+    <select id="selectLikePage" resultType="Map" parameterType="String">
+        SELECT NOT_CODE,NOT_DESC,NOT_DATE,NOTUDFCHAR02,NOTUDFCHAR03 FROM R5RMNOTICECS WHERE NOT_DESC LIKE '%'||#{str}||'%' ORDER BY NOT_DATE DESC
+    </select>
+    <select id="selectPageJsonLike" resultType="Map" parameterType="Map">
+        SELECT NOT_CODE,NOT_DESC,NOT_DATE,NOTUDFCHAR02,NOTUDFCHAR03 FROM R5RMNOTICECS WHERE NOTUDFCHAR03=#{class} AND NOT_DESC LIKE '%'||#{likeNotice}||'%' ORDER BY NOT_DATE DESC
+    </select>
+    <select id="selectClass" resultType="Map">
+        select * from R5RMENTITYCATEGORY WHERE ENCCODE='NOTICE'
+    </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

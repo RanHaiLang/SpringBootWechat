@@ -1,0 +1,28 @@
+server.port=8889
+#生产环境
+#spring.datasource.url=jdbc:oracle:thin:@47.99.98.184:1521:eamdb
+#spring.datasource.username=AUXEAM
+#spring.datasource.password=AuxWang123456
+#spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+
+
+#
+#logging.level.root=info
+#spring.thymeleaf.cache = false
+#logging.level.com.dy.springboot.server.mapper=debug
+#logging.level.com.rminfo = info
+#logging.file= log/aux-eam-interface.log
+#
+##mybatis
+#mybatis.type-aliases-package=com.rminfo.entity
+#mybatis.mapper-locations=classpath:mapper/*.xml
+#mybatis.configuration.jdbc-type-for-null=null
+#logging.level.com.rminfo.mapper=debug
+## 通用 Mapper 配置
+#mapper.not-empty=false
+#mapper.identity=ORACLE
+## 分页插件配置
+#pagehelper.helperDialect=oracle
+#pagehelper.reasonable=true
+#pagehelper.supportMethodsArguments=true
+#pagehelper.params=count=countSql

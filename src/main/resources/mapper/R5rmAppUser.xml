@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rminfo.jinmaocs.mapper.R5rmAppUserMapper">
+
+	<select id="selectAll" resultType="Map">
+       SELECT * FROM R5RMAPPUSERS
+	</select>
+	<select id="getUser" parameterType="Map" resultType="com.rminfo.jinmaocs.entity.R5rmAppUser">
+       SELECT * FROM R5RMAPPUSERS WHERE USRCODE=#{usercode}
+		<if test="password !='' and password !=null">
+			AND USRPASSWORD=#{password}
+		</if>
+	</select>
+
+</mapper>

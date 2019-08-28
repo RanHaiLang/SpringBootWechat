@@ -1,0 +1,260 @@
+2019-08-13 09:41:23.662  INFO 14612 --- [main] com.rminfo.jinmaocs.JinmaocsApplication  : Starting JinmaocsApplication on DESKTOP-P0KPT72 with PID 14612 (D:\Intellijworkspace\JinMaoCS\target\classes started by SeaRan in D:\Intellijworkspace\JinMaoCS)
+2019-08-13 09:41:23.672  INFO 14612 --- [main] com.rminfo.jinmaocs.JinmaocsApplication  : The following profiles are active: test
+2019-08-13 09:41:24.063  WARN 14612 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.rminfo.jinmaocs.JinmaocsApplication]; nested exception is java.lang.IllegalStateException: Failed to introspect annotated methods on class org.springframework.boot.web.servlet.support.SpringBootServletInitializer
+2019-08-13 09:41:24.085 ERROR 14612 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.rminfo.jinmaocs.JinmaocsApplication]; nested exception is java.lang.IllegalStateException: Failed to introspect annotated methods on class org.springframework.boot.web.servlet.support.SpringBootServletInitializer
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at com.rminfo.jinmaocs.JinmaocsApplication.main(JinmaocsApplication.java:19) [classes/:na]
+Caused by: java.lang.IllegalStateException: Failed to introspect annotated methods on class org.springframework.boot.web.servlet.support.SpringBootServletInitializer
+	at org.springframework.core.type.StandardAnnotationMetadata.getAnnotatedMethods(StandardAnnotationMetadata.java:169) ~[spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.retrieveBeanMethodMetadata(ConfigurationClassParser.java:392) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:317) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 12 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: javax/servlet/ServletContext
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_31]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2693) ~[na:1.8.0_31]
+	at java.lang.Class.getDeclaredMethods(Class.java:1967) ~[na:1.8.0_31]
+	at org.springframework.core.type.StandardAnnotationMetadata.getAnnotatedMethods(StandardAnnotationMetadata.java:158) ~[spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 17 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.servlet.ServletContext
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:372) ~[na:1.8.0_31]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361) ~[na:1.8.0_31]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.8.0_31]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:360) ~[na:1.8.0_31]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_31]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308) ~[na:1.8.0_31]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_31]
+	... 21 common frames omitted
+
+2019-08-13 09:41:49.804  INFO 11844 --- [main] com.rminfo.jinmaocs.JinmaocsApplication  : Starting JinmaocsApplication on DESKTOP-P0KPT72 with PID 11844 (D:\Intellijworkspace\JinMaoCS\target\classes started by SeaRan in D:\Intellijworkspace\JinMaoCS)
+2019-08-13 09:41:49.807  INFO 11844 --- [main] com.rminfo.jinmaocs.JinmaocsApplication  : The following profiles are active: test
+2019-08-13 09:41:50.228  WARN 11844 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.rminfo.jinmaocs.JinmaocsApplication]; nested exception is java.lang.IllegalStateException: Failed to introspect annotated methods on class org.springframework.boot.web.servlet.support.SpringBootServletInitializer
+2019-08-13 09:41:50.271 ERROR 11844 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.rminfo.jinmaocs.JinmaocsApplication]; nested exception is java.lang.IllegalStateException: Failed to introspect annotated methods on class org.springframework.boot.web.servlet.support.SpringBootServletInitializer
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at com.rminfo.jinmaocs.JinmaocsApplication.main(JinmaocsApplication.java:19) [classes/:na]
+Caused by: java.lang.IllegalStateException: Failed to introspect annotated methods on class org.springframework.boot.web.servlet.support.SpringBootServletInitializer
+	at org.springframework.core.type.StandardAnnotationMetadata.getAnnotatedMethods(StandardAnnotationMetadata.java:169) ~[spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.retrieveBeanMethodMetadata(ConfigurationClassParser.java:392) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:317) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 12 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: javax/servlet/ServletContext
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_31]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2693) ~[na:1.8.0_31]
+	at java.lang.Class.getDeclaredMethods(Class.java:1967) ~[na:1.8.0_31]
+	at org.springframework.core.type.StandardAnnotationMetadata.getAnnotatedMethods(StandardAnnotationMetadata.java:158) ~[spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 17 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.servlet.ServletContext
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:372) ~[na:1.8.0_31]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361) ~[na:1.8.0_31]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.8.0_31]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:360) ~[na:1.8.0_31]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_31]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308) ~[na:1.8.0_31]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_31]
+	... 21 common frames omitted
+
+2019-08-13 09:42:38.513  INFO 18416 --- [main] com.rminfo.jinmaocs.JinmaocsApplication  : Starting JinmaocsApplication on DESKTOP-P0KPT72 with PID 18416 (D:\Intellijworkspace\JinMaoCS\target\classes started by SeaRan in D:\Intellijworkspace\JinMaoCS)
+2019-08-13 09:42:38.516  INFO 18416 --- [main] com.rminfo.jinmaocs.JinmaocsApplication  : The following profiles are active: test
+2019-08-13 09:42:38.832  WARN 18416 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.rminfo.jinmaocs.JinmaocsApplication]; nested exception is java.lang.IllegalStateException: Failed to introspect annotated methods on class org.springframework.boot.web.servlet.support.SpringBootServletInitializer
+2019-08-13 09:42:38.858 ERROR 18416 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.rminfo.jinmaocs.JinmaocsApplication]; nested exception is java.lang.IllegalStateException: Failed to introspect annotated methods on class org.springframework.boot.web.servlet.support.SpringBootServletInitializer
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at com.rminfo.jinmaocs.JinmaocsApplication.main(JinmaocsApplication.java:19) [classes/:na]
+Caused by: java.lang.IllegalStateException: Failed to introspect annotated methods on class org.springframework.boot.web.servlet.support.SpringBootServletInitializer
+	at org.springframework.core.type.StandardAnnotationMetadata.getAnnotatedMethods(StandardAnnotationMetadata.java:169) ~[spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.retrieveBeanMethodMetadata(ConfigurationClassParser.java:392) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:317) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 12 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: javax/servlet/ServletContext
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_31]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2693) ~[na:1.8.0_31]
+	at java.lang.Class.getDeclaredMethods(Class.java:1967) ~[na:1.8.0_31]
+	at org.springframework.core.type.StandardAnnotationMetadata.getAnnotatedMethods(StandardAnnotationMetadata.java:158) ~[spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 17 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.servlet.ServletContext
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:372) ~[na:1.8.0_31]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361) ~[na:1.8.0_31]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.8.0_31]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:360) ~[na:1.8.0_31]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_31]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308) ~[na:1.8.0_31]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_31]
+	... 21 common frames omitted
+
+2019-08-13 09:42:59.852  INFO 21184 --- [main] com.rminfo.jinmaocs.JinmaocsApplication  : Starting JinmaocsApplication on DESKTOP-P0KPT72 with PID 21184 (D:\Intellijworkspace\JinMaoCS\target\classes started by SeaRan in D:\Intellijworkspace\JinMaoCS)
+2019-08-13 09:42:59.855  INFO 21184 --- [main] com.rminfo.jinmaocs.JinmaocsApplication  : The following profiles are active: test
+2019-08-13 09:43:00.968  WARN 21184 --- [main] t.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.rminfo.jinmaocs]' package. Please check your configuration.
+2019-08-13 09:43:00.990  WARN 21184 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.rminfo.jinmaocs]' package. Please check your configuration.
+2019-08-13 09:43:01.916  INFO 21184 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2019-08-13 09:43:01.941  INFO 21184 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-13 09:43:01.943  INFO 21184 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-13 09:43:02.138  INFO 21184 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-13 09:43:02.139  INFO 21184 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2162 ms
+2019-08-13 09:43:03.038  INFO 21184 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-13 09:43:03.210  INFO 21184 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2019-08-13 09:43:03.211  INFO 21184 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2019-08-13 09:43:03.212  INFO 21184 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2019-08-13 09:43:03.213  INFO 21184 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear EntityHelper entityTableMap cache.
+2019-08-13 09:43:03.524  INFO 21184 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2019-08-13 09:43:03.528  INFO 21184 --- [main] com.rminfo.jinmaocs.JinmaocsApplication  : Started JinmaocsApplication in 4.502 seconds (JVM running for 6.089)
+2019-08-13 09:48:19.631  INFO 17120 --- [main] c.r.jinmaocs.JinmaocsApplicationTests    : Starting JinmaocsApplicationTests on DESKTOP-P0KPT72 with PID 17120 (started by SeaRan in D:\Intellijworkspace\JinMaoCS)
+2019-08-13 09:48:19.632  INFO 17120 --- [main] c.r.jinmaocs.JinmaocsApplicationTests    : The following profiles are active: test
+2019-08-13 09:48:20.627  WARN 17120 --- [main] t.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.rminfo.jinmaocs]' package. Please check your configuration.
+2019-08-13 09:48:20.657  WARN 17120 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.rminfo.jinmaocs]' package. Please check your configuration.
+2019-08-13 09:48:23.511  INFO 17120 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-13 09:48:23.927  INFO 17120 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2019-08-13 09:48:23.928  INFO 17120 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2019-08-13 09:48:23.929  INFO 17120 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2019-08-13 09:48:23.932  INFO 17120 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear EntityHelper entityTableMap cache.
+2019-08-13 09:48:25.233  INFO 17120 --- [main] c.r.jinmaocs.JinmaocsApplicationTests    : Started JinmaocsApplicationTests in 5.997 seconds (JVM running for 9.258)
+2019-08-13 09:48:26.925  INFO 17120 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-13 11:47:40.906  INFO 7880 --- [main] com.rminfo.jinmaocs.JinmaocsApplication  : Starting JinmaocsApplication on DESKTOP-P0KPT72 with PID 7880 (D:\Intellijworkspace\JinMaoCS\target\classes started by SeaRan in D:\Intellijworkspace\JinMaoCS)
+2019-08-13 11:47:40.909  INFO 7880 --- [main] com.rminfo.jinmaocs.JinmaocsApplication  : The following profiles are active: test
+2019-08-13 11:47:41.856  WARN 7880 --- [main] t.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.rminfo.jinmaocs]' package. Please check your configuration.
+2019-08-13 11:47:41.884  WARN 7880 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.rminfo.jinmaocs]' package. Please check your configuration.
+2019-08-13 11:47:42.872  WARN 7880 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'loginController': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.rminfo.jinmaocs.controller.LoginController] from ClassLoader [sun.misc.Launcher$AppClassLoader@58644d46]
+2019-08-13 11:47:42.882  INFO 7880 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-13 11:47:42.896 ERROR 7880 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'loginController': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.rminfo.jinmaocs.controller.LoginController] from ClassLoader [sun.misc.Launcher$AppClassLoader@58644d46]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:265) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1269) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1184) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$111/1690101810.getObject(Unknown Source) ~[na:na]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:845) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at com.rminfo.jinmaocs.JinmaocsApplication.main(JinmaocsApplication.java:19) [classes/:na]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.rminfo.jinmaocs.controller.LoginController] from ClassLoader [sun.misc.Launcher$AppClassLoader@58644d46]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:507) ~[spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:404) ~[spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:389) ~[spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:248) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 18 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: javax/servlet/http/HttpServletRequest
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_31]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2693) ~[na:1.8.0_31]
+	at java.lang.Class.getDeclaredMethods(Class.java:1967) ~[na:1.8.0_31]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:489) ~[spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 21 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.servlet.http.HttpServletRequest
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:372) ~[na:1.8.0_31]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361) ~[na:1.8.0_31]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.8.0_31]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:360) ~[na:1.8.0_31]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_31]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308) ~[na:1.8.0_31]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_31]
+	... 25 common frames omitted
+
+2019-08-13 16:44:46.961  INFO 14244 --- [main] com.rminfo.jinmaocs.JinmaocsApplication  : Starting JinmaocsApplication on DESKTOP-P0KPT72 with PID 14244 (D:\Intellijworkspace\JinMaoCS\target\classes started by SeaRan in D:\Intellijworkspace\JinMaoCS)
+2019-08-13 16:44:46.986  INFO 14244 --- [main] com.rminfo.jinmaocs.JinmaocsApplication  : The following profiles are active: test
+2019-08-13 16:44:48.425  WARN 14244 --- [main] t.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.rminfo.jinmaocs]' package. Please check your configuration.
+2019-08-13 16:44:48.445  WARN 14244 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.rminfo.jinmaocs]' package. Please check your configuration.
+2019-08-13 16:44:49.663  WARN 14244 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'loginController': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.rminfo.jinmaocs.controller.LoginController] from ClassLoader [sun.misc.Launcher$AppClassLoader@58644d46]
+2019-08-13 16:44:49.672  INFO 14244 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-13 16:44:49.718 ERROR 14244 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'loginController': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.rminfo.jinmaocs.controller.LoginController] from ClassLoader [sun.misc.Launcher$AppClassLoader@58644d46]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:265) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1269) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1184) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$112/1794768050.getObject(Unknown Source) ~[na:na]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:845) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at com.rminfo.jinmaocs.JinmaocsApplication.main(JinmaocsApplication.java:17) [classes/:na]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.rminfo.jinmaocs.controller.LoginController] from ClassLoader [sun.misc.Launcher$AppClassLoader@58644d46]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:507) ~[spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:404) ~[spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:389) ~[spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:248) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 18 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: javax/servlet/http/HttpServletRequest
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_31]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2693) ~[na:1.8.0_31]
+	at java.lang.Class.getDeclaredMethods(Class.java:1967) ~[na:1.8.0_31]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:489) ~[spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 21 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.servlet.http.HttpServletRequest
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:372) ~[na:1.8.0_31]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361) ~[na:1.8.0_31]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.8.0_31]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:360) ~[na:1.8.0_31]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_31]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308) ~[na:1.8.0_31]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_31]
+	... 25 common frames omitted
+

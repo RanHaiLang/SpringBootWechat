@@ -1,0 +1,51 @@
+server.port=8888
+##测试环境
+spring.datasource.url=jdbc:oracle:thin:@172.16.209.52:1521:D7I
+spring.datasource.username=D7I
+spring.datasource.password=D7I
+spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+
+##mybatis
+mybatis.type-aliases-package=com.rminfo.jinmaocs.entity
+mybatis.mapper-locations=classpath:mapper/*.xml
+mybatis.configuration.jdbc-type-for-null=null
+
+##logging
+logging.level.com.rminfo.jinmaocs.mapper=debug
+logging.level.com.rminfo.jinmaocs = info
+logging.file= log/aux-eam-interface.log
+
+## 通用 Mapper 配置
+mapper.not-empty=false
+mapper.identity=ORACLE
+
+##jsp path
+spring.mvc.view.prefix=/
+spring.mvc.view.suffix=.jsp
+
+## 分页插件配置
+pagehelper.helperDialect=oracle
+pagehelper.reasonable=true
+pagehelper.supportMethodsArguments=true
+pagehelper.params=count=countSql
+
+#自定义字段redis连接信息
+redis.host.src=localhost
+redis.host.port=6379
+redis.host.password=123456
+
+##自定义路径
+##Apache路径，用于显示图片
+#jinmaocs.formalUrl=http://116.62.167.164:7113/stream/images/
+jinmaocs.formalUrl=http://192.168.3.116/cluster/stream/images/
+##服务器本地文件路径
+jinmaocs.docPath=D:/cluster/stream/doc/
+##服务器本地图片路径
+jinmaocs.imagesPath=D:/cluster/stream/images/
+##服务器本地视频路径
+jinmaocs.videoPath=D:/cluster/stream/video/
+
+##上传文件属性
+jinmaocs.fileSavePath = C:/inforEAM/data/docuploads/DS_MP_1/##上传文件属性
+jinmaocs.extendNamesArray=.jpg,.jpeg,.png,.gif,.JPG,.JPEG,.PNG,.GIF
+

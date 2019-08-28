@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rminfo.jinmaocs.mapper.WechatUserMapper">
+
+    <select id="selectAppUser" parameterType="Map" resultType="com.rminfo.jinmaocs.entity.R5rmAppUser">
+        SELECT * FROM R5RMAPPUSERS WHERE 1=1 AND USRCODE =#{username} AND USRPASSWORD = #{password}
+    </select>
+
+    <select id="selectBindUser" parameterType="Map" resultType="com.rminfo.jinmaocs.entity.R5rmAppUser">
+        SELECT * FROM R5RMAPPUSERS WHERE 1=1 AND USRCODE =#{username} AND USRUDFCHAR07  is not null
+    </select>
+
+    <select id="selectYesNoBindUser" parameterType="Map" resultType="com.rminfo.jinmaocs.entity.R5rmAppUser">
+        SELECT * FROM R5RMAPPUSERS WHERE 1=1 AND  USRUDFCHAR07=#{openid}
+    </select>
+
+    <update id="userBinding" parameterType="Map">
+        UPDATE R5RMAPPUSERS SET usrudfchar07=#{openid} WHERE usrcode=#{username}
+    </update>
+</mapper>

@@ -1,0 +1,3 @@
+spring.profiles.active = test
+spring.http.encoding.force=true
+spring.http.encoding.charset=UTF-8

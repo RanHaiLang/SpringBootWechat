@@ -1,0 +1,120 @@
+package com.rminfo.jinmaocs.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.rminfo.jinmaocs.entity.Constant;
+import com.rminfo.jinmaocs.entity.R5rmAppUser;
+import com.rminfo.jinmaocs.service.WechatUserService;
+import com.rminfo.jinmaocs.util.HttpRequestUtil;
+import com.rminfo.jinmaocs.util.WXBizMsgCrypt;
+import io.jsonwebtoken.*;
+import org.apache.commons.codec.binary.Base64;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
+import javax.xml.bind.DatatypeConverter;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: SeaRan
+ * Date: 2019/7/29
+ * Time: 14:55
+ * 项目名：jinmaocs
+ * 描述：TODO
+ * Description: No Description
+ */
+@RestController
+@RequestMapping("wechat")
+public class WeChatLoginController {
+
+    @Autowired
+    private Constant constant;
+
+    @Autowired
+    private WechatUserService wechatUserService;
+
+    /**
+     * 获取凭证校检接口
+     * @param code
+     * @return
+     */
+    @GetMapping("wechatlogin")
+    @ResponseBody
+    public Object wechatlogin(String code) {
+        Map m = new HashMap();
+        try {
+            //登录凭证校验
+            String authcodeUrl = "https://api.weixin.qq.com/sns/jscode2session?appid="+constant.getAppid()+"&secret="+constant.getSecret()+"&js_code="+code+"&grant_type=authorization_code";
+
+            //进行网络请求,访问url接口
+            JSONObject jsonObject = HttpRequestUtil.doGetStr(authcodeUrl);
+            System.out.println("微信返回的结果："+jsonObject);
+            if(jsonObject!=null){
+                System.out.println("============================");
+                System.out.println(WXBizMsgCrypt.generToken((String )jsonObject.get("openid"),(String )jsonObject.get("session_key"),null));
+                String trd_session = WXBizMsgCrypt.generToken((String )jsonObject.get("session_key"),(String )jsonObject.get("openid"),null);
+                m.put("trd_session",trd_session);
+                m.put("code",0);
+            }
+        } catch (IOException e) {
+            m.put("message","登录校验出错");
+            m.put("code",1);
+        }finally {
+            return m;
+        }
+
+    }
+
+
+    @PostMapping("userbinding")
+    @ResponseBody
+    public Object UserBinding(String token,String username,String password) {
+        Map m = new HashMap();
+        try {
+            if(token==null||username==null||password==null){
+                m.put("message","参数错误");
+                m.put("code","405");
+            }else {
+                Claims claims = Jwts.parser()
+                        .setSigningKey(DatatypeConverter.parseBase64Binary(WXBizMsgCrypt.sercetKey))
+                        .parseClaimsJws(token).getBody();
+                System.out.println(claims.getId());
+                String openid = claims.getId();
+                //判断用户名密码是否正确
+                R5rmAppUser r5rmAppUser = wechatUserService.selectAppUser(username, password);
+                if (r5rmAppUser != null) {
+                    //判断用户是否被绑定
+                    if (wechatUserService.selectBindUser(username) == null) {
+                        //绑定用户
+                        int row = wechatUserService.userBinding(username,openid);
+                        if(row>0){
+                            m.put("message", "绑定成功");
+                            m.put("code", "200");
+                        }else {
+                            m.put("message", "绑定失败");
+                            m.put("code", "204");
+                        }
+                    }else {
+                        m.put("message", "用户被绑定");
+                        m.put("code", "204");
+                    }
+                } else {
+                    m.put("message", "用户不存在");
+                    m.put("code", "204");
+                }
+            }
+        } catch (Exception e) {
+            m.put("message", "服务器错误");
+            m.put("code", "500");
+        } finally {
+            return m;
+        }
+    }
+}

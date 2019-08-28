@@ -1,0 +1,20 @@
+//上传文件属性
+fileSavePath = C:/inforEAM/data/docuploads/DS_MP_1/
+
+#fileSavePath = D:/huangyongxing/
+extendNamesArray=.jpg,.jpeg,.png,.gif,.JPG,.JPEG,.PNG,.GIF
+
+maxSize = 1024*1024*20
+//下载文件路径
+filePath=D:/cluster/stream/images/
+apkPath=D:/cluster/stream/apk/
+docPath=D:/cluster/stream/doc/
+excelPath=D:/cluster/stream/excel/
+videoPath=D:/cluster/stream/video/
+
+##Apache路径，用于显示图片
+#formalUrl=http://116.62.167.164:7113/stream/images/
+formalUrl=http://192.168.3.116/cluster/stream/images/
+
+formalApkUrl=http://116.62.167.164:7113/stream/apk/
+
